@@ -11,8 +11,12 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model Example {
+
+model Book {
     id        String   @id @default(cuid())
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
+    title String 
+    author String @db.VarChar(255)
+    thumbnailLink String
+    description String @db.VarChar(255)
+
 }
